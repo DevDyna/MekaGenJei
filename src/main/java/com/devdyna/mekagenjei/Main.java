@@ -1,5 +1,6 @@
 package com.devdyna.mekagenjei;
 
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -9,10 +10,14 @@ public class Main {
 
     public static final String ID = "mekagenjei";
 
-    public static final String GAS_BURNING_GENERATOR_CATEGORY_ID = ID+".jei.gas_burning";
-    public static final String BIOFUEL_GENERATOR_CATEGORY_ID = ID+".jei.bio_fuel";
+    public static final String GAS_BURNING_GENERATOR_CATEGORY_ID = ID + ".jei.gas_burning";
+    public static final String BIOFUEL_GENERATOR_CATEGORY_ID = ID + ".jei.bio_fuel";
 
     public Main(IEventBus bus, ModContainer mc) {
 
+    }
+
+    public static final ResourceLocation rl(String s) {
+        return ResourceLocation.fromNamespaceAndPath(ID, s);
     }
 }
