@@ -91,17 +91,17 @@ public class zStatic {
 
     public enum WASTE implements IGasCategory {
 
-        NUCLEAR_WASTE(MekanismChemicals.NUCLEAR_WASTE, false),
-        SPENT_NUCLEAR_WASTE(MekanismChemicals.SPENT_NUCLEAR_WASTE, false),
-        POLONIUM(MekanismChemicals.POLONIUM, true),
-        PLUTONIUM(MekanismChemicals.PLUTONIUM, true);
+        NUCLEAR_WASTE(MekanismChemicals.NUCLEAR_WASTE, true),
+        SPENT_NUCLEAR_WASTE(MekanismChemicals.SPENT_NUCLEAR_WASTE, true),
+        POLONIUM(MekanismChemicals.POLONIUM, false),
+        PLUTONIUM(MekanismChemicals.PLUTONIUM, false);
 
         private DeferredChemical<Chemical> gas;
-        private boolean dontDecay;
+        private boolean canDecay;
 
-        WASTE(DeferredChemical<Chemical> gas, boolean dontDecay) {
+        WASTE(DeferredChemical<Chemical> gas, boolean canDecay) {
             this.gas = gas;
-            this.dontDecay = dontDecay;
+            this.canDecay = canDecay;
         }
 
         public DeferredChemical<Chemical> getGas() {
@@ -109,7 +109,7 @@ public class zStatic {
         }
 
         public boolean getCondition() {
-            return dontDecay;
+            return canDecay;
         }
 
     }
