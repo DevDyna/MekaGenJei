@@ -5,5 +5,5 @@
   "mekagenjei.jei.pump_output": "Pump Production",
   "mekagenjei.jei.radioactive_gas": "Radioactive Gasses",
   "mekagenjei.jei.turbine_steam": "Multiblock Turbine Fuels",
-  "mekagenjei.waste.decay": "Will not decay"
+  "mekagenjei.waste.decay": "Can decay"
 }
