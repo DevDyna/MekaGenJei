@@ -24,7 +24,7 @@ public class zStatic {
             this.name = name;
         }
 
-        public String getName() {
+        public String key() {
             return name;
         }
 

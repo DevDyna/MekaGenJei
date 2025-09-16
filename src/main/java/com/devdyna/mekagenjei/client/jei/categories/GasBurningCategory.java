@@ -11,12 +11,12 @@ import mezz.jei.api.recipe.RecipeType;
 public class GasBurningCategory<T> extends MonoGasCategory<zStatic.GASBURNING> {
 
     public GasBurningCategory( IGuiHelper guiHelper) {
-        super(TYPE, guiHelper, zStatic.categories.GAS_BURNING_FUELGAS.name(),
+        super(TYPE, guiHelper, zStatic.categories.GAS_BURNING_FUELGAS.key(),
                 GeneratorsBlocks.GAS_BURNING_GENERATOR.get().asItem());
     }
 
     public final static RecipeType<zStatic.GASBURNING> TYPE = RecipeType.create(ID,
-            zStatic.categories.GAS_BURNING_FUELGAS.name(),
+            zStatic.categories.GAS_BURNING_FUELGAS.key(),
             zStatic.GASBURNING.class);
 
 }

@@ -23,11 +23,11 @@ import mezz.jei.api.recipe.category.AbstractRecipeCategory;
 public class BioFuelCategory<T> extends AbstractRecipeCategory<zStatic.BIOFUEL> {
 
     public final static RecipeType<zStatic.BIOFUEL> TYPE = RecipeType.create(ID,
-            zStatic.categories.BIOFUEL_FUELS.name(),
+            zStatic.categories.BIOFUEL_FUELS.key(),
             zStatic.BIOFUEL.class);
 
     public BioFuelCategory(IGuiHelper guiHelper) {
-        super(TYPE, Component.translatable(zStatic.categories.BIOFUEL_FUELS.name()),
+        super(TYPE, Component.translatable(zStatic.categories.BIOFUEL_FUELS.key()),
                 ItemIcon.of(guiHelper, GeneratorsBlocks.BIO_GENERATOR.get().asItem()), 16, 16);
     }
 

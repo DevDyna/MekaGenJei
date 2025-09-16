@@ -11,11 +11,11 @@ import mezz.jei.api.recipe.RecipeType;
 public class TurbineCategory<T> extends MonoGasCategory<zStatic.TURBINE> {
 
     public final static RecipeType<zStatic.TURBINE> TYPE = RecipeType.create(ID,
-            zStatic.categories.TURBINE_STEAM.name(),
+            zStatic.categories.TURBINE_STEAM.key(),
             zStatic.TURBINE.class);
 
     public TurbineCategory(IGuiHelper guiHelper) {
-        super(TYPE, guiHelper, zStatic.categories.TURBINE_STEAM.name(),
+        super(TYPE, guiHelper, zStatic.categories.TURBINE_STEAM.key(),
                 GeneratorsItems.TURBINE_BLADE.get());
     }
 
