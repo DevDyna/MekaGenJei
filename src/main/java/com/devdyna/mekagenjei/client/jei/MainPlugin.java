@@ -30,6 +30,7 @@ public class MainPlugin implements IModPlugin {
                 new BioFuelCategory<>(guiHelper),
                 new GasBurningCategory<>(guiHelper),
                 new TurbineCategory<>(guiHelper),
+                new RadioactiveBarrelCategory<>(guiHelper),
                 new FusionFuelCategory<>(guiHelper),
                 new PumpExtractionCategory<>(guiHelper));
     }
