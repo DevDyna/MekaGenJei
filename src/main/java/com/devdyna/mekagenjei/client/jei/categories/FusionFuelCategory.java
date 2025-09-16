@@ -24,7 +24,7 @@ import net.minecraft.network.chat.Component;
 public class FusionFuelCategory<T> extends AbstractRecipeCategory<zStatic.FUSION_FUELS> {
 
         public FusionFuelCategory(IGuiHelper guiHelper) {
-                super(TYPE, Component.translatable(zStatic.categories.GAS_BURNING_FUELGAS.key()),
+                super(TYPE, Component.translatable(zStatic.categories.FUSION_FUELS.key()),
                                 ItemIcon.of(guiHelper, GeneratorsItems.HOHLRAUM.get().asItem()), 40, 16);
         }
 
