@@ -19,6 +19,10 @@ public class DataLang extends LanguageProvider {
         add(zStatic.categories.BIOFUEL_FUELS.key(), "BioFuel Generator Fuels");
         add(zStatic.categories.GAS_BURNING_FUELGAS.key(), "Gas Burning Fuels");
         add(zStatic.categories.TURBINE_STEAM.key(), "Multiblock Turbine Fuels");
+        add(zStatic.categories.RADIACTIVE_GAS.key(), "Radioactive Gasses");
+        add(zStatic.categories.PUMP_OUTPUT.key(), "Pump Production");
+        add(zStatic.categories.FUSION_FUELS.key(), "Fusion Reactor Fuels");
+        add(ID+".waste.decay", "Will not decay");
     }
 
 }
