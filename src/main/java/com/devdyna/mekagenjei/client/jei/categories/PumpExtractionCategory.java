@@ -31,7 +31,7 @@ public class PumpExtractionCategory<T> extends AbstractRecipeCategory<zStatic.PU
     public void setRecipe(IRecipeLayoutBuilder builder, zStatic.PUMP recipe, IFocusGroup group) {
         builder.addInputSlot(0, 0).addFluidStack(recipe.getFluid());
         if (recipe.getCondition())
-            builder.addInputSlot(16, 0).addItemStack(x.item(MekanismItems.FILTER_UPGRADE));
+            builder.addInputSlot(24, 0).addItemStack(x.item(MekanismItems.FILTER_UPGRADE));
     }
 
 }
