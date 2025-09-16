@@ -22,7 +22,7 @@ public class DataLang extends LanguageProvider {
         add(zStatic.categories.RADIACTIVE_GAS.key(), "Radioactive Gasses");
         add(zStatic.categories.PUMP_OUTPUT.key(), "Pump Production");
         add(zStatic.categories.FUSION_FUELS.key(), "Fusion Reactor Fuels");
-        add(ID+".waste.decay", "Will not decay");
+        add(ID+".waste.decay", "Can decay");
     }
 
 }
