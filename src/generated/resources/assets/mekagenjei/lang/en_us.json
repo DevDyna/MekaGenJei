@@ -1,5 +1,9 @@
 {
   "mekagenjei.jei.bio_fuel": "BioFuel Generator Fuels",
+  "mekagenjei.jei.fusion_fuels": "Fusion Reactor Fuels",
   "mekagenjei.jei.gas_burning": "Gas Burning Fuels",
-  "mekagenjei.jei.turbine_steam": "Multiblock Turbine Fuels"
+  "mekagenjei.jei.pump_output": "Pump Production",
+  "mekagenjei.jei.radioactive_gas": "Radioactive Gasses",
+  "mekagenjei.jei.turbine_steam": "Multiblock Turbine Fuels",
+  "mekagenjei.waste.decay": "Will not decay"
 }
