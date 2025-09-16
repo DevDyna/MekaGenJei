@@ -1,4 +1,4 @@
-package com.devdyna.mekagenjei.client.jei;
+package com.devdyna.mekagenjei.client.jei.drawable;
 
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.helpers.IGuiHelper;
