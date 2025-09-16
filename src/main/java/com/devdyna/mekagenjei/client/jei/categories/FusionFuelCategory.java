@@ -20,7 +20,7 @@ public class FusionFuelCategory<T> extends AbstractRecipeCategory<zStatic.FUSION
 
     public FusionFuelCategory(IGuiHelper guiHelper) {
         super(TYPE, Component.translatable(zStatic.categories.GAS_BURNING_FUELGAS.key()),
-                ItemIcon.of(guiHelper, GeneratorsItems.HOHLRAUM.get().asItem()), 16, 16);
+                ItemIcon.of(guiHelper, GeneratorsItems.HOHLRAUM.get().asItem()), 48, 16);
     }
 
     public final static RecipeType<zStatic.FUSION_FUELS> TYPE = RecipeType.create(ID,
@@ -34,7 +34,7 @@ public class FusionFuelCategory<T> extends AbstractRecipeCategory<zStatic.FUSION
 
             builder.addInputSlot(
                     0 + (recipe.getGasList().size() > 1 ? -8 : 0) +
-                            (recipe.getGasList().indexOf(g) * 16),
+                            (recipe.getGasList().indexOf(g) * 24),
                     0)
                     .addIngredient(MekanismJEI.TYPE_CHEMICAL,
                             new ChemicalStack(g, 1000))
