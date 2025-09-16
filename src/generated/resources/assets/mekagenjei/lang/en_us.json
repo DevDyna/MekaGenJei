@@ -1,5 +1,5 @@
 {
-  "BIOFUEL_FUELS": "BioFuel Generator Fuels",
-  "GAS_BURNING_FUELGAS": "Gas Burning Fuels",
-  "TURBINE_STEAM": "Multiblock Turbine Fuels"
+  "mekagenjei.jei.bio_fuel": "BioFuel Generator Fuels",
+  "mekagenjei.jei.gas_burning": "Gas Burning Fuels",
+  "mekagenjei.jei.turbine_steam": "Multiblock Turbine Fuels"
 }
