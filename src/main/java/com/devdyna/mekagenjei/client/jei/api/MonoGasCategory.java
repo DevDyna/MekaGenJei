@@ -16,8 +16,11 @@ import mezz.jei.api.recipe.category.AbstractRecipeCategory;
 @SuppressWarnings({ "null" })
 public abstract class MonoGasCategory<T> extends AbstractRecipeCategory<T> {
 
+    protected IGuiHelper guiHelper;
+
     public MonoGasCategory(RecipeType<T> recipeType, IGuiHelper guiHelper, String traslationkey, Item icon) {
         super(recipeType, Component.translatable(traslationkey), ItemIcon.of(guiHelper, icon), 16, 16);
+        this.guiHelper = guiHelper;
     }
 
     @Override
