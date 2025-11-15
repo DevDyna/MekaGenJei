@@ -2,8 +2,11 @@ package com.devdyna.mekagenjei.client.jei.categories;
 
 import static com.devdyna.mekagenjei.Main.*;
 
+import org.jetbrains.annotations.Nullable;
+
 import com.devdyna.mekagenjei.zStatic;
-import com.devdyna.mekagenjei.client.jei.drawable.ItemIcon;
+import com.devdyna.mekagenjei.client.jei.api.BaseRecipeCategory;
+import com.devdyna.mekagenjei.utils.Size;
 import com.devdyna.mekagenjei.zStatic.FUSION_FUELS;
 
 import mekanism.api.chemical.ChemicalStack;
@@ -15,17 +18,15 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeType;
-import mezz.jei.api.recipe.category.AbstractRecipeCategory;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.level.ItemLike;
 
 @SuppressWarnings("null")
-public class FusionFuelCategory<T> extends AbstractRecipeCategory<zStatic.FUSION_FUELS> {
+public class FusionFuelCategory<T> extends BaseRecipeCategory<zStatic.FUSION_FUELS> {
 
         public FusionFuelCategory(IGuiHelper guiHelper) {
-                super(TYPE, Component.translatable(zStatic.categories.FUSION_FUELS.key()),
-                                ItemIcon.of(guiHelper, GeneratorsItems.HOHLRAUM.get().asItem()), 40, 16);
+                super(guiHelper);
         }
 
         public final static RecipeType<zStatic.FUSION_FUELS> TYPE = RecipeType.create(ID,
@@ -57,7 +58,6 @@ public class FusionFuelCategory<T> extends AbstractRecipeCategory<zStatic.FUSION
         @Override
         public void draw(FUSION_FUELS recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX,
                         double mouseY) {
-                var font = Minecraft.getInstance().font;
 
                 if (recipe.getGasList().size() > 1)
                         guiGraphics.drawString(font,
@@ -65,6 +65,31 @@ public class FusionFuelCategory<T> extends AbstractRecipeCategory<zStatic.FUSION
                                         17,
                                         4,
                                         0xffffff);
+        }
+
+        @Override
+        public RecipeType<FUSION_FUELS> getRecipeType() {
+                return TYPE;
+        }
+
+        @Override
+        public String getTitleKey() {
+                return zStatic.categories.FUSION_FUELS.key();
+        }
+
+        @Override
+        public ItemLike getIconItem() {
+                return GeneratorsItems.HOHLRAUM.get();
+        }
+
+        @Override
+        public Size setXY() {
+                return Size.of(40, 16);
+        }
+
+        @Override
+        public @Nullable String setBackGround() {
+                return null;
         }
 
 }
