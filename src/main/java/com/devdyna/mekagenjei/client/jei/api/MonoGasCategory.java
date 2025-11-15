@@ -1,6 +1,6 @@
 package com.devdyna.mekagenjei.client.jei.api;
 
-import com.devdyna.mekagenjei.client.jei.drawable.ItemIcon;
+import com.devdyna.mekagenjei.utils.Size;
 
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.client.recipe_viewer.jei.ChemicalStackRenderer;
@@ -8,19 +8,18 @@ import mekanism.client.recipe_viewer.jei.MekanismJEI;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
-import mezz.jei.api.recipe.RecipeType;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import mezz.jei.api.recipe.category.AbstractRecipeCategory;
 
 @SuppressWarnings({ "null" })
-public abstract class MonoGasCategory<T> extends AbstractRecipeCategory<T> {
+public abstract class MonoGasCategory<T> extends BaseRecipeCategory<T> {
 
-    protected IGuiHelper guiHelper;
 
-    public MonoGasCategory(RecipeType<T> recipeType, IGuiHelper guiHelper, String traslationkey, Item icon) {
-        super(recipeType, Component.translatable(traslationkey), ItemIcon.of(guiHelper, icon), 16, 16);
-        this.guiHelper = guiHelper;
+    public MonoGasCategory(IGuiHelper guiHelper) {
+        super(guiHelper);
+    }
+
+    @Override
+    public Size setXY() {
+        return Size.of(16, 16);
     }
 
     @Override
