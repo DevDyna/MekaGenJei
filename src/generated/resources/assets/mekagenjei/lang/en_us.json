@@ -4,6 +4,9 @@
   "mekagenjei.jei.gas_burning": "Gas Burning Fuels",
   "mekagenjei.jei.pump_output": "Pump Production",
   "mekagenjei.jei.radioactive_gas": "Radioactive Gasses",
+  "mekagenjei.jei.rate": "FE production",
+  "mekagenjei.jei.time": "Duration",
+  "mekagenjei.jei.total": "Total FE produced",
   "mekagenjei.jei.turbine_steam": "Multiblock Turbine Fuels",
   "mekagenjei.waste.decay": "Can decay"
 }
