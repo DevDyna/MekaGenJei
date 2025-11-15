@@ -10,6 +10,7 @@ import com.devdyna.mekagenjei.utils.x;
 import com.mojang.blaze3d.vertex.PoseStack;
 
 import mekanism.common.registries.MekanismItems;
+import mekanism.generators.common.config.MekanismGeneratorsConfig;
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.builder.ITooltipBuilder;
@@ -55,15 +56,17 @@ public class BioFuelCategory<T> extends AbstractRecipeCategory<zStatic.BIOFUEL> 
                                 .draw(guiGraphics, 0, 0);
 
                 var time = 200 * (x.item(recipe.getItems()).is(MekanismItems.BIO_FUEL) ? 1 : 9);
-                var rate = 280;
+                var rate = Numbers.jouleToFE(MekanismGeneratorsConfig.generators.bioGeneration.get());
                 var total = time * rate;
+
+                
 
                 PoseStack stack = guiGraphics.pose();
                 stack.pushPose();
                 stack.scale(0.75F, 0.75F, 8000F);
                 guiGraphics.drawString(font,
                                 (Screen.hasShiftDown()
-                                                ? ((double) time / 20 +"").replaceAll("\\.0$", "") + " sec"
+                                                ? ((double) time / 20 + "").replaceAll("\\.0$", "") + " sec"
                                                 : time + " ticks"),
                                 46, 4,
                                 0xFFFFFF);
