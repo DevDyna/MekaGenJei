@@ -71,7 +71,7 @@ public class GasBurningCategory<T> extends AbstractRecipeCategory<zStatic.GASBUR
         stack.scale(0.75F, 0.75F, 8000F);
         guiGraphics.drawString(font,
                 (Screen.hasShiftDown()
-                        ? time / 20 + " sec"
+                        ? ((double) time / 20 +"").replaceAll("\\.0$", "") + " sec"
                         : time + " ticks"),
                 46, 4,
                 0xFFFFFF);
