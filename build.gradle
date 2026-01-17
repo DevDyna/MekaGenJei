@@ -119,8 +119,8 @@ configurations {
 }
 
 dependencies {
-        implementation "curse.maven:meka-268560:6895130"
-        implementation "curse.maven:mekagen-268566:6895133"
+        implementation "curse.maven:meka-268560:7132168"
+        implementation "curse.maven:mekagen-268566:7132171"
         implementation "curse.maven:jei-238222:5846880"
 }
 
