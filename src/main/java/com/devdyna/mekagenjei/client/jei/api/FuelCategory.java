@@ -2,7 +2,6 @@ package com.devdyna.mekagenjei.client.jei.api;
 
 import static com.devdyna.mekagenjei.Main.ID;
 
-import org.jetbrains.annotations.Nullable;
 
 import com.devdyna.mekagenjei.utils.Numbers;
 import com.devdyna.mekagenjei.utils.Pos;
@@ -86,7 +85,7 @@ public abstract class FuelCategory<T> extends BaseRecipeCategory<T> {
     }
 
     @Override
-    public @Nullable String setBackGround() {
+    public String setBackGround() {
         return "textures/gui/fuel_icons.png";
     }
 

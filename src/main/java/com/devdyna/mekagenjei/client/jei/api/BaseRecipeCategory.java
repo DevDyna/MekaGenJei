@@ -1,7 +1,5 @@
 package com.devdyna.mekagenjei.client.jei.api;
 
-import org.jetbrains.annotations.Nullable;
-
 import com.devdyna.mekagenjei.utils.Image;
 import com.devdyna.mekagenjei.utils.Size;
 
@@ -38,7 +36,7 @@ public abstract class BaseRecipeCategory<T> implements IRecipeCategory<T> {
      */
     public abstract Size setXY();
 
-    public abstract @Nullable String setBackGround();
+    public abstract String setBackGround();
 
     @Override
     public Component getTitle() {
@@ -46,7 +44,7 @@ public abstract class BaseRecipeCategory<T> implements IRecipeCategory<T> {
     }
 
     @Override
-    public @Nullable IDrawable getIcon() {
+    public IDrawable getIcon() {
         return helper.createDrawableItemLike(getIconItem());
     }
 

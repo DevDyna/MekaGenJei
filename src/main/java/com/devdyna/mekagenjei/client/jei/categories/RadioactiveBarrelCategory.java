@@ -2,8 +2,6 @@ package com.devdyna.mekagenjei.client.jei.categories;
 
 import static com.devdyna.mekagenjei.Main.*;
 
-import org.jetbrains.annotations.Nullable;
-
 import com.devdyna.mekagenjei.zStatic;
 import com.devdyna.mekagenjei.zStatic.WASTE;
 import com.devdyna.mekagenjei.client.jei.api.MonoGasCategory;
@@ -28,7 +26,7 @@ public class RadioactiveBarrelCategory<T> extends MonoGasCategory<zStatic.WASTE>
 
     @Override
     public ItemLike getIconItem() {
-        return MekanismBlocks.RADIOACTIVE_WASTE_BARREL.get();
+        return MekanismBlocks.RADIOACTIVE_WASTE_BARREL.getBlock();
     }
 
     @Override
@@ -42,7 +40,7 @@ public class RadioactiveBarrelCategory<T> extends MonoGasCategory<zStatic.WASTE>
     }
 
     @Override
-    public @Nullable String setBackGround() {
+    public String setBackGround() {
         return null;
     }
 

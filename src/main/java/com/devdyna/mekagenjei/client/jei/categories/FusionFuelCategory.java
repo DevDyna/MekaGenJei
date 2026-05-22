@@ -2,16 +2,14 @@ package com.devdyna.mekagenjei.client.jei.categories;
 
 import static com.devdyna.mekagenjei.Main.*;
 
-import org.jetbrains.annotations.Nullable;
-
 import com.devdyna.mekagenjei.zStatic;
 import com.devdyna.mekagenjei.client.jei.api.BaseRecipeCategory;
 import com.devdyna.mekagenjei.utils.Size;
 import com.devdyna.mekagenjei.zStatic.FUSION_FUELS;
 
-import mekanism.api.chemical.ChemicalStack;
-import mekanism.client.recipe_viewer.jei.ChemicalStackRenderer;
-import mekanism.client.recipe_viewer.jei.MekanismJEI;
+import mekanism.api.chemical.gas.GasStack;
+import mekanism.client.jei.ChemicalStackRenderer;
+import mekanism.client.jei.MekanismJEI;
 import mekanism.generators.common.registries.GeneratorsItems;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
@@ -46,10 +44,10 @@ public class FusionFuelCategory<T> extends BaseRecipeCategory<zStatic.FUSION_FUE
                         builder.addInputSlot(
                                         (size > 1 ? 0 : 12) + (index > 0 ? 24 : 0),
                                         0)
-                                        .addIngredient(MekanismJEI.TYPE_CHEMICAL,
-                                                        new ChemicalStack(g, 1000))
-                                        .setCustomRenderer(MekanismJEI.TYPE_CHEMICAL,
-                                                        new ChemicalStackRenderer(1000, 16, 16));
+                                        .addIngredient(MekanismJEI.TYPE_GAS,
+                                                        new GasStack(g, 1000))
+                                        .setCustomRenderer(MekanismJEI.TYPE_GAS,
+                                                        new ChemicalStackRenderer<GasStack>(1000, 16, 16));
 
                 });
 
@@ -88,7 +86,7 @@ public class FusionFuelCategory<T> extends BaseRecipeCategory<zStatic.FUSION_FUE
         }
 
         @Override
-        public @Nullable String setBackGround() {
+        public String setBackGround() {
                 return null;
         }
 

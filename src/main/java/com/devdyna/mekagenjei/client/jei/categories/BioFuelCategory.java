@@ -33,12 +33,12 @@ public class BioFuelCategory<T> extends FuelCategory<zStatic.BIOFUEL> {
 
         @Override
         public double rate(BIOFUEL recipe) {
-                return Numbers.jouleToFE(MekanismGeneratorsConfig.generators.bioGeneration.get());
+                return Numbers.jouleToFE(MekanismGeneratorsConfig.generators.bioGeneration.get().getValue());
         }
 
         @Override
         public double duration(BIOFUEL recipe) {
-                return 200 * (x.item(recipe.getItems()).is(MekanismItems.BIO_FUEL) ? 1 : 9);
+                return 200 * (x.item(recipe.getItems()).is(MekanismItems.BIO_FUEL.get()) ? 1 : 9);
         }
 
         @Override
@@ -53,7 +53,7 @@ public class BioFuelCategory<T> extends FuelCategory<zStatic.BIOFUEL> {
 
         @Override
         public ItemLike getIconItem() {
-                return GeneratorsBlocks.BIO_GENERATOR.get();
+                return GeneratorsBlocks.BIO_GENERATOR.getBlock();
         }
 
 }

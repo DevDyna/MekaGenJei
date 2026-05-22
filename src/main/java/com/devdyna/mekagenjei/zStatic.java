@@ -6,10 +6,10 @@ import java.util.List;
 
 import com.devdyna.mekagenjei.client.jei.api.IGasCategory;
 
-import mekanism.api.chemical.Chemical;
-import mekanism.common.registration.impl.DeferredChemical;
+import mekanism.api.chemical.gas.Gas;
+import mekanism.common.registration.impl.GasRegistryObject;
 import mekanism.common.registries.*;
-import mekanism.generators.common.registries.GeneratorsChemicals;
+import mekanism.generators.common.registries.GeneratorsGases;
 import mezz.jei.api.recipe.RecipeType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.material.FlowingFluid;
@@ -41,16 +41,16 @@ public class zStatic {
 
     public enum GASBURNING implements IGasCategory {
 
-        HYDROGEN(MekanismChemicals.HYDROGEN),
-        ETHENE(MekanismChemicals.ETHENE);
+        HYDROGEN(MekanismGases.HYDROGEN),
+        ETHENE(MekanismGases.ETHENE);
 
-        private DeferredChemical<Chemical> gas;
+        private GasRegistryObject<Gas> gas;
 
-        GASBURNING(DeferredChemical<Chemical> gas) {
+        GASBURNING(GasRegistryObject<Gas> gas) {
             this.gas = gas;
         }
 
-        public DeferredChemical<Chemical> getGas() {
+        public GasRegistryObject<Gas> getGas() {
             return gas;
         }
 
@@ -58,15 +58,15 @@ public class zStatic {
 
     public enum TURBINE implements IGasCategory {
 
-        STEAM(MekanismChemicals.STEAM);
+        STEAM(MekanismGases.STEAM);
 
-        private DeferredChemical<Chemical> gas;
+        private GasRegistryObject<Gas> gas;
 
-        TURBINE(DeferredChemical<Chemical> gas) {
+        TURBINE(GasRegistryObject<Gas> gas) {
             this.gas = gas;
         }
 
-        public DeferredChemical<Chemical> getGas() {
+        public GasRegistryObject<Gas> getGas() {
             return gas;
         }
 
@@ -74,8 +74,10 @@ public class zStatic {
 
     public enum BIOFUEL {
 
-        ITEM(MekanismItems.BIO_FUEL.get()),
-        BLOCK(MekanismBlocks.BIO_FUEL_BLOCK.get().asItem());
+        ITEM(MekanismItems.BIO_FUEL.get())
+        // ,
+        // BLOCK(MekanismBlocks.BIO.get().asItem())
+        ;
 
         private Item items;
 
@@ -91,20 +93,20 @@ public class zStatic {
 
     public enum WASTE implements IGasCategory {
 
-        NUCLEAR_WASTE(MekanismChemicals.NUCLEAR_WASTE, true),
-        SPENT_NUCLEAR_WASTE(MekanismChemicals.SPENT_NUCLEAR_WASTE, true),
-        POLONIUM(MekanismChemicals.POLONIUM, false),
-        PLUTONIUM(MekanismChemicals.PLUTONIUM, false);
+        NUCLEAR_WASTE(MekanismGases.NUCLEAR_WASTE, true),
+        SPENT_NUCLEAR_WASTE(MekanismGases.SPENT_NUCLEAR_WASTE, true),
+        POLONIUM(MekanismGases.POLONIUM, false),
+        PLUTONIUM(MekanismGases.PLUTONIUM, false);
 
-        private DeferredChemical<Chemical> gas;
+        private GasRegistryObject<Gas> gas;
         private boolean canDecay;
 
-        WASTE(DeferredChemical<Chemical> gas, boolean canDecay) {
+        WASTE(GasRegistryObject<Gas> gas, boolean canDecay) {
             this.gas = gas;
             this.canDecay = canDecay;
         }
 
-        public DeferredChemical<Chemical> getGas() {
+        public GasRegistryObject<Gas> getGas() {
             return gas;
         }
 
@@ -117,7 +119,7 @@ public class zStatic {
     public enum PUMP {
 
         WATER(Fluids.WATER, false),
-        HEAVY_WATER(MekanismFluids.HEAVY_WATER.get(), true);
+        HEAVY_WATER(MekanismFluids.HEAVY_WATER.getFluid(), true);
 
         private FlowingFluid fluid;
         private boolean requireFilter;
@@ -139,16 +141,16 @@ public class zStatic {
 
     public enum FUSION_FUELS {
 
-        D_T(List.of(GeneratorsChemicals.FUSION_FUEL)),
-        UNCRAFTED(List.of(GeneratorsChemicals.DEUTERIUM, GeneratorsChemicals.TRITIUM));
+        D_T(List.of(GeneratorsGases.FUSION_FUEL)),
+        UNCRAFTED(List.of(GeneratorsGases.DEUTERIUM, GeneratorsGases.TRITIUM));
 
-        private List<DeferredChemical<Chemical>> gas;
+        private List<GasRegistryObject<Gas>> gas;
 
-        FUSION_FUELS(List<DeferredChemical<Chemical>> gas) {
+        FUSION_FUELS(List<GasRegistryObject<Gas>> gas) {
             this.gas = gas;
         }
 
-        public List<DeferredChemical<Chemical>> getGasList() {
+        public List<GasRegistryObject<Gas>> getGasList() {
             return gas;
         }
 

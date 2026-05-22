@@ -5,7 +5,7 @@ import static com.devdyna.mekagenjei.Main.*;
 import com.devdyna.mekagenjei.zStatic;
 
 import net.minecraft.data.PackOutput;
-import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.minecraftforge.common.data.LanguageProvider;
 
 public class DataLang extends LanguageProvider {
 

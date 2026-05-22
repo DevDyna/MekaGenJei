@@ -2,8 +2,6 @@ package com.devdyna.mekagenjei.client.jei.categories;
 
 import static com.devdyna.mekagenjei.Main.*;
 
-import org.jetbrains.annotations.Nullable;
-
 import com.devdyna.mekagenjei.zStatic;
 import com.devdyna.mekagenjei.zStatic.TURBINE;
 import com.devdyna.mekagenjei.client.jei.api.MonoGasCategory;
@@ -38,7 +36,7 @@ public class TurbineCategory<T> extends MonoGasCategory<zStatic.TURBINE> {
     }
 
     @Override
-    public @Nullable String setBackGround() {
+    public String setBackGround() {
         return null;
     }
 

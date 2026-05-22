@@ -35,7 +35,7 @@ public class PumpExtractionCategory<T> extends BaseRecipeCategory<zStatic.PUMP> 
         builder.addOutputSlot(13, 3).addFluidStack(recipe.getFluid()).setOutputSlotBackground();
         if (recipe.getCondition())
             builder.addInputSlot(13, 35)
-                    .addItemStack(x.item(MekanismItems.FILTER_UPGRADE));
+                    .addItemStack(x.item(MekanismItems.FILTER_UPGRADE.get()));
         builder.addInputSlot(14, 60).addFluidStack(Fluids.WATER);
 
     }
@@ -52,7 +52,7 @@ public class PumpExtractionCategory<T> extends BaseRecipeCategory<zStatic.PUMP> 
 
     @Override
     public ItemLike getIconItem() {
-        return MekanismBlocks.ELECTRIC_PUMP.get().asItem();
+        return MekanismBlocks.ELECTRIC_PUMP.getBlock();
     }
 
     @Override

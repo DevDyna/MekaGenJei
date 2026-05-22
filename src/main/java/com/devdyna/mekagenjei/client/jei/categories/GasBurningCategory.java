@@ -2,17 +2,16 @@ package com.devdyna.mekagenjei.client.jei.categories;
 
 import static com.devdyna.mekagenjei.Main.*;
 
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nullable;
 
 import com.devdyna.mekagenjei.zStatic;
 import com.devdyna.mekagenjei.client.jei.api.FuelCategory;
 import com.devdyna.mekagenjei.utils.Numbers;
 import com.devdyna.mekagenjei.zStatic.GASBURNING;
-import mekanism.api.chemical.ChemicalStack;
-import mekanism.api.datamaps.IMekanismDataMapTypes;
-import mekanism.api.datamaps.chemical.attribute.ChemicalFuel;
-import mekanism.client.recipe_viewer.jei.ChemicalStackRenderer;
-import mekanism.client.recipe_viewer.jei.MekanismJEI;
+import mekanism.api.chemical.gas.GasStack;
+import mekanism.api.chemical.gas.attribute.GasAttributes.Fuel;
+import mekanism.client.jei.ChemicalStackRenderer;
+import mekanism.client.jei.MekanismJEI;
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import mezz.jei.api.gui.builder.IRecipeSlotBuilder;
 import mezz.jei.api.helpers.IGuiHelper;
@@ -32,14 +31,14 @@ public class GasBurningCategory<T> extends FuelCategory<zStatic.GASBURNING> {
 
         @Override
         public void setSlotType(GASBURNING recipe, IRecipeSlotBuilder slot) {
-                slot.addIngredient(MekanismJEI.TYPE_CHEMICAL,
-                                new ChemicalStack(recipe.getGas(), 1000))
-                                .setCustomRenderer(MekanismJEI.TYPE_CHEMICAL,
-                                                new ChemicalStackRenderer(1000, 16, 16));
+                slot.addIngredient(MekanismJEI.TYPE_GAS,
+                                new GasStack(recipe.getGas(), 1000))
+                                .setCustomRenderer(MekanismJEI.TYPE_GAS,
+                                                new ChemicalStackRenderer<GasStack>(1000, 16, 16));
         }
 
-        public @Nullable ChemicalFuel getFuel(GASBURNING recipe) {
-                return recipe.getGas().getData(IMekanismDataMapTypes.INSTANCE.chemicalFuel());
+        public @Nullable Fuel getFuel(GASBURNING recipe) {
+                return recipe.getGas().get().get(Fuel.class);
         }
 
         public boolean isValid(GASBURNING recipe) {
@@ -48,14 +47,14 @@ public class GasBurningCategory<T> extends FuelCategory<zStatic.GASBURNING> {
 
         @Override
         public double duration(GASBURNING recipe) {
-                return isValid(recipe) ? getFuel(recipe).burnTicks() : 0;
+                return isValid(recipe) ? getFuel(recipe).getBurnTicks() : 0;
         }
 
         @Override
         public double rate(GASBURNING recipe) {
                 return (isValid(recipe)
-                                ? Numbers.jouleToFE(getFuel(recipe).energyDensity()) * (double) 256
-                                                / getFuel(recipe).burnTicks()
+                                ? Numbers.jouleToFE(getFuel(recipe).getEnergyPerTick().getValue()) * (double) 256
+                                                / getFuel(recipe).getBurnTicks()
                                 : 0);
         }
 
@@ -71,7 +70,7 @@ public class GasBurningCategory<T> extends FuelCategory<zStatic.GASBURNING> {
 
         @Override
         public ItemLike getIconItem() {
-                return GeneratorsBlocks.GAS_BURNING_GENERATOR.get();
+                return GeneratorsBlocks.GAS_BURNING_GENERATOR.getBlock();
         }
 
 }
